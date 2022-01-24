@@ -1,5 +1,18 @@
 function fibonacci(num) {
   // type your code here
+  if (num === 0) {
+    return 0;
+  } else if (num === 1) {
+    return 1;
+  }
+  let lastTwo = [0, 1];
+  let index = 1;
+  while (index < num) {
+    const nextValue = lastTwo[0] + lastTwo[1];
+    lastTwo = [lastTwo[1], nextValue];
+    index++;
+  }
+  return lastTwo[1];
 }
 
 if (require.main === module) {
